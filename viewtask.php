@@ -2,11 +2,13 @@
 <html>
 	<head>
 		<title>View Task</title>
+		<link rel="stylesheet" href="assets/css/bootstrap.css">
 	</head>
 	<body>
 	<a href="index.php">Logout</a>
 	<a href="Addtask.php">Add Task</a>
-			<table border="1">
+	<div>
+			<table class="table table-bordered">
 				<tr><th>ID</th>
 				<th>Title</th>
 				<th>Details</th>
@@ -57,6 +59,7 @@ session_start();
 ?>
 				
 			</table>
+			</div>
 			<?php 
 		session_start();
 		
@@ -68,4 +71,6 @@ session_start();
 		
 		?>
 	</body>
+	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.js" type="text/javascript"></script>
 </html>
