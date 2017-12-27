@@ -1,14 +1,7 @@
 <?php include 'global_header.php';?>
 
 	<div>
-			<table class="table table-bordered">
-				<tr><th>ID</th>
-				<th>Title</th>
-				<th>Details</th>
-				<th>Summary</th>
-				<th>Edit</th>
-				<th>Delete</th>
-				</tr>
+			<div class="row">
 <?php
 include 'config.php';
 session_start();
@@ -43,14 +36,20 @@ session_start();
 			$desc=$row['details'];
 			$summary=$row['summary'];
 			?>
-			<tr>
-			<td><?php echo $ID;?></td>
-			<td><?php echo $title;?></td>
-			<td><?php echo $desc;?></td>
-			<td><?php echo $summary;?></td>
-			<td><a href="Addtask.php?id=<?php echo $ID;?>">Edit</a></td>
-			<td><a onclick="javascript:return confirm('Are you sure?')" href="deleteTask.php?id=<?php echo $ID;?>">Delete</a></td>
-			</tr>
+			<div class="col-sm-8 col-lg-offset-2">
+			    <div class="thumbnail">
+			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZfvNwUXDM_h3N-IerkvpVAdnwe02aGErsQmqV2z-oVsjcsemTAw">
+			      <div class="caption">
+			        <h3><?php echo $title;?></h3>
+			        <p><?php echo $desc;?></p>
+			        <p><?php echo $desc;?></p>
+			        <p><a href="Addtask.php?id=<?php echo $ID;?>" class="btn btn-primary" role="button">Edit</a> <a onclick="javascript:return confirm('Are you sure?')" href="deleteTask.php?id=<?php echo $ID;?>" class="btn btn-default" role="button">Delete</a></p>
+			      </div>
+			    </div>
+			  </div>
+			
+				
+		
 		
 			<?php 
 		}
@@ -59,8 +58,7 @@ session_start();
 	
 ?>
 				
-			</table>
-			</div>
+		</div>
 			<?php 
 		session_start();
 		

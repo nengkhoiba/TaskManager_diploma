@@ -24,6 +24,7 @@
       <ul class="nav navbar-nav">
         <li><a href="Addtask.php">Add task</a></li>
         <li><a href="viewtask.php">View task</a></li>
+        <li><a href="notice.php">Notice Board</a></li>
         
       </ul>
       <form method="post" action="viewtask.php" class="navbar-form navbar-left">
