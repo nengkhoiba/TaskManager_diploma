@@ -1,12 +1,5 @@
+<?php include 'global_header.php';?>
 
-<html>
-	<head>
-		<title>View Task</title>
-		<link rel="stylesheet" href="assets/css/bootstrap.css">
-	</head>
-	<body>
-	<a href="index.php">Logout</a>
-	<a href="Addtask.php">Add Task</a>
 	<div>
 			<table class="table table-bordered">
 				<tr><th>ID</th>
@@ -31,9 +24,16 @@ session_start();
 		
 		header("Location:index.php",TRUE);  
 	}
-	
-	$sql="SELECT ID,title,details,summary FROM Task";
-	
+	$key="0";
+		if(isset($_POST['keyword'])){
+		$key=$_POST['keyword'];
+		}
+		
+		if($key=="0"){
+		$sql="SELECT ID,title,details,summary FROM Task";
+		}else{
+			$sql="SELECT ID,title,details,summary FROM Task where title like '%$key%'";
+		}
 	$result=mysqli_query($link,$sql);
 	
 	if($result){
@@ -71,6 +71,4 @@ session_start();
 		
 		?>
 	</body>
-	<script src="assets/js/jquery.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.js" type="text/javascript"></script>
-</html>
+	<?php include 'global_footer.php';?>
